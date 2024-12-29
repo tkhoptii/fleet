@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AddEventPage_EY extends BasePage{
+public class AddEventPage_EY extends BasePage {
 
     public AddEventPage_EY() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -14,11 +14,14 @@ public class AddEventPage_EY extends BasePage{
     @FindBy(xpath = "//input[@data-name='recurrence-repeat']")
     public WebElement checkBox;
 
-    @FindBy(css = ".recurrence-subview-control__number")
+    @FindBy(xpath = "//input[@class='recurrence-subview-control__number']")
     public WebElement repeatEveryXday;
 
     @FindBy(xpath = "//a[@title='Create Calendar event']")
     public WebElement createCalendarBtn;
+
+    @FindBy(xpath = "//span[contains(text(), 'This value should not be blank.')]")
+    public WebElement errorMessage;
 
 //
 //    @FindBy(id = "prependedInput")

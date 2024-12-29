@@ -10,6 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class Add_Event_Step_Definitions_EY {
@@ -25,7 +26,6 @@ public class Add_Event_Step_Definitions_EY {
     AddEventPage_EY addEventPageEy = new AddEventPage_EY();
 
 
-
     @Given("users navigate to {string} and to {string} page")
     public void usersNavigateToAndToPage(String tab, String module) {
         addEventPageEy.navigateToModule("Activities", "Calendar Events");
@@ -33,21 +33,19 @@ public class Add_Event_Step_Definitions_EY {
 
     @When("users create calendar even click create calendar event button")
     public void usersCreateCalendarEvenClickCreateCalendarEventButton() {
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(2);
         addEventPageEy.createCalendarBtn.click();
     }
 
     @When("users choose to create a recurring event to click repeat checkbox")
     public void i_choose_to_create_a_recurring_event() {
-        BrowserUtils.sleep(3);
         addEventPageEy.checkBox.click();
-        BrowserUtils.sleep(3);
         Assert.assertTrue("Checkbox is selected", addEventPageEy.checkBox.isSelected());
 
     }
 
-    @And("users confirm Repeat Every is set to {string} as default")
-    public void iConfirmIsSetToAsDefault(String arg0) {
+    @And("users confirm Repeat Every is set to 1 as default")
+    public void iConfirmIsSetToAsDefault() {
         String repeatValue = addEventPageEy.repeatEveryXday.getAttribute("value");
         System.out.println("addEventPageEy.repeatEveryXday = " + repeatValue);
     }
@@ -55,9 +53,29 @@ public class Add_Event_Step_Definitions_EY {
     @Then("users should see {string} by default in the Repeat Every input field")
     public void i_should_see_by_default_in_the_input_field(String expectedValue) {
         String actualValue = addEventPageEy.repeatEveryXday.getAttribute("value");
+        Assert.assertEquals("This is not the value!!", actualValue, expectedValue);
+        BrowserUtils.sleep(2);
+    }
 
-        Assert.assertEquals("This is not the value!!",actualValue,expectedValue);
 
+    @When("I clear the Repeat Every field")
+    public void iClearTheRepeatEveryField() {
+
+        WebElement clearTheBox = addEventPageEy.repeatEveryXday;
+        clearTheBox.click();
+        while (!clearTheBox.getAttribute("value").isEmpty()) {
+            clearTheBox.sendKeys(Keys.BACK_SPACE);
+
+        }
+        clearTheBox.sendKeys(Keys.TAB);
+    }
+
+    @Then("I should see the error message {string}")
+    public void iShouldSeeTheErrorMessage(String expectedMessage) {
+        BrowserUtils.sleep(2);
+        String actualErrorMessage = addEventPageEy.errorMessage.getText();
+        Assert.assertTrue(addEventPageEy.errorMessage.isDisplayed());
+        Assert.assertEquals("Error message is expected..", actualErrorMessage, expectedMessage);
     }
 
     //AddEventPage_EY addEventPage =new AddEventPage_EY();
