@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class US07_SelectVehiclePage extends BasePage {
+public class US07_SelectVehiclePage_TK extends BasePage {
 
-    public US07_SelectVehiclePage() {
+    public US07_SelectVehiclePage_TK() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

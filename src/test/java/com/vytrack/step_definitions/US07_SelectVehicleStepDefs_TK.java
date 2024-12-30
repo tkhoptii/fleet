@@ -1,6 +1,6 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.US07_SelectVehiclePage;
+import com.vytrack.pages.US07_SelectVehiclePage_TK;
 import com.vytrack.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,9 +10,9 @@ import org.openqa.selenium.WebElement;
 import java.util.Random;
 
 
-public class US07_SelectVehicleStepDefs {
+public class US07_SelectVehicleStepDefs_TK {
 
-    US07_SelectVehiclePage us07SelectVehiclePage = new US07_SelectVehiclePage();
+    US07_SelectVehiclePage_TK us07SelectVehiclePage = new US07_SelectVehiclePage_TK();
 
     @When("user navigate to {string} and to {string} page")
     public void user_navigate_to_and_to_page(String tab, String module) {
