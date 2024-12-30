@@ -1,19 +1,16 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.US04_VehicleContractsPage;
+import com.vytrack.pages.US04_VehicleContracts_IKPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-public class US04_VehicleContracts_StepDefs {
+public class US04_VehicleContracts_IK_StepDefs {
 
-    US04_VehicleContractsPage us04_vehicleContractsPage = new US04_VehicleContractsPage();
+    US04_VehicleContracts_IKPage us04_vehicleContractsPage = new US04_VehicleContracts_IKPage();
 
     @When("the user should see expected title as {string}")
     public void the_user_should_see_expected_title_as(String expectedTitle) {
