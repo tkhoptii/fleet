@@ -20,4 +20,6 @@ public class US07_SelectVehiclePage_TK extends BasePage {
     public WebElement selectAllVehicleCheckBox;
 
 
+
+
 }

@@ -42,5 +42,7 @@ public class US07_SelectVehicleStepDefs_TK {
         randomCheckBox.click();
         BrowserUtils.waitFor(2);
         Assert.assertTrue(randomCheckBox.isSelected());
+
+        //done
     }
 }
