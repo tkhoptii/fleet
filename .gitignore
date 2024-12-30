@@ -1,3 +1,5 @@
 /target/
 /.idea/
 /*.iml
+/CukeRunner.java
+/FailedTestRunner.java
