@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AddEventPage_EY extends BasePage {
+public class US08_AddEventPage_EY extends BasePage {
 
-    public AddEventPage_EY() {
+    public US08_AddEventPage_EY() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -23,19 +23,4 @@ public class AddEventPage_EY extends BasePage {
     @FindBy(xpath = "//span[contains(text(), 'This value should not be blank.')]")
     public WebElement errorMessage;
 
-//
-//    @FindBy(id = "prependedInput")
-//    public WebElement usernameInput;
-//
-//    @FindBy(id = "prependedInput2")
-//    public WebElement passwordInput;
-//
-//    @FindBy(id = "_submit")
-//    public WebElement loginBtn;
-//
-//    public void login(String username, String password){
-//        usernameInput.sendKeys(ConfigurationReader.getProperty(username));
-//        passwordInput.sendKeys(ConfigurationReader.getProperty(password));
-//        loginBtn.click();
-//    }
 }
