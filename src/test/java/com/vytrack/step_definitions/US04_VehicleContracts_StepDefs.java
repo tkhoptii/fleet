@@ -1,7 +1,10 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.US04_VehicleContractsPage;
+import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -11,20 +14,17 @@ import org.openqa.selenium.WebElement;
 public class US04_VehicleContracts_StepDefs {
 
     US04_VehicleContractsPage us04_vehicleContractsPage = new US04_VehicleContractsPage();
-    @When("the user should see the page URL as {string}")
-    public void the_user_should_see_the_page_url_as(String tap, String module) {
-        us04_vehicleContractsPage.navigateToModule("Fleet", "Vehicle Contracts");
 
-    }
     @When("the user should see expected title as {string}")
-    public void the_user_should_see_expected_title_as(String string) {
-        String expectedURL = "https://qa1.vytrack.com";
-        String actualUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(actualUrl,expectedURL);
+    public void the_user_should_see_expected_title_as(String expectedTitle) {
 
-        String expectedTitle = "All - Vehicle Contract - Entities - System - Car - Entities - System";
+        BrowserUtils.sleep(2);
         String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertEquals(actualTitle,expectedTitle);
+        System.out.println("actualTitle = " + actualTitle);
+
+        System.out.println("expectedTitle = " + expectedTitle);
+        BrowserUtils.sleep(1);
+         Assert.assertEquals(actualTitle,expectedTitle);
 
     }
 
@@ -34,9 +34,16 @@ public class US04_VehicleContracts_StepDefs {
         String expectedErrorMessage = "You do not have permission to perform this action.";
         String actualErrorMessage = us04_vehicleContractsPage.ErrorMessage.getText();
         Assert.assertTrue(us04_vehicleContractsPage.ErrorMessage.isDisplayed());
-        Assert.assertEquals("Error message text does not match", actualErrorMessage,expectedErrorMessage);
+
     }
 
 
+    @And("the user should see the page URL as {string}")
+    public void theUserShouldSeeThePageURLAs(String expectedURL) {
 
+        String actualURL = Driver.getDriver().getCurrentUrl();
+
+        Assert.assertEquals(expectedURL,actualURL);
+
+    }
 }

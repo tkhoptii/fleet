@@ -9,7 +9,6 @@ Feature: As a user, I want to learn how to use the pinbar
  #   Given the user logged in with username as "User1" and password as "UserUser123"
 
 
-
      When the user clicks to the "Learn how to use this space"
      And the user see “How To Use Pinbar”
      Then the user can see “Use the pin icon on the right top corner of page to create fast access link in the pinbar.”

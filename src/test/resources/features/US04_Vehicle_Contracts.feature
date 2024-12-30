@@ -6,8 +6,8 @@ Feature: As a user, I want to access to Vehicle Contracts page
   Scenario Outline: Verify login with different user types
     Given the user logged in as "<userType>"
     When user navigate to "Fleet" and to "Vehicle Contracts" page
-    And the user should see the page URL as "https://qa1.vytrack.com"
-    And the user should see expected title as "All - Vehicle Contract - Entities - System - Car - Entities - System"
+    And the user should see the page URL as "https://qa1.vytrack.com/entity/Extend_Entity_Carreservation"
+    And the user should see expected title as "All - Car - Entities - System - Car - Entities - System"
 
     Examples:
       | userType      |
