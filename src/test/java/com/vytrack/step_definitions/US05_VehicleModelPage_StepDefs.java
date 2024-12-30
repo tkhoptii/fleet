@@ -34,6 +34,7 @@ public class US05_VehicleModelPage_StepDefs {
         Assert.assertEquals("Error message text does not match", actualErrorMessage,expectedErrorMessage);
     }
 
+
     @When("user navigates to {string} and to {string} page")
     public void userNavigatesToAndToPage(String tab, String module) {
         us05_vehicleModelPage.navigateToModule("Fleet","Vehicles Model");
