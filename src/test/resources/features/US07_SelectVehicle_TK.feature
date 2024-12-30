@@ -33,3 +33,5 @@ Feature: Select vehicle from the Vehicles page
       | userType      |
       | sales manager |
       | store manager |
+
+
