@@ -17,4 +17,12 @@ public class US05_VehicleModelPage extends BasePage{
 
     public List<WebElement> allModels;
 
+    @FindBy (xpath = "//div[.='You do not have permission to perform this action.']")
+
+    public WebElement ErrorMessage;
+
+
 }
+
+
+
