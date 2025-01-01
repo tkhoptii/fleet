@@ -11,6 +11,19 @@ public class US11_VehicleOdometer_TK_Page extends BasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//div[@class='alert alert-error fade in top-messages '][1]")
+    @FindBy(xpath = "(//span[@class='title title-level-1'])[2]")
+    public WebElement tabFleet;
+
+    @FindBy(xpath = "(//span[@class='title title-level-2'])[4]")
+    public WebElement moduleVehicleOdometer;
+
+    @FindBy(xpath = "//div[@class='flash-messages-holder']")
     public WebElement errorMessage;
+
+
+    @FindBy(xpath = "//input[@class='input-widget']")
+    public WebElement defaultPageNumber;
+
+    @FindBy(xpath = "//button[@class='btn dropdown-toggle ']")
+    public WebElement viewPerPage;
 }
