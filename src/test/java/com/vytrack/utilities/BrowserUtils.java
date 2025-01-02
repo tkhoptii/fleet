@@ -122,6 +122,10 @@ public class BrowserUtils {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
     }
 
+    public static void verifyURL(String expectedURL) {
+        Assert.assertEquals(expectedURL, Driver.getDriver().getCurrentUrl());
+    }
+
     /**
      * Switches to new window by the exact title. Returns to original window if target title not found
      * @param targetTitle
