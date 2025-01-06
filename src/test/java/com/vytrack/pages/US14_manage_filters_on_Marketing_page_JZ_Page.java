@@ -30,7 +30,6 @@ public class US14_manage_filters_on_Marketing_page_JZ_Page extends BasePage {
             Assert.assertFalse(filterCheckBoxes.isSelected());
         }
 
-
     }
 }
 

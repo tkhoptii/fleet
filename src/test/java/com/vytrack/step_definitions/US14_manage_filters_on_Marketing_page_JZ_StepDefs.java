@@ -49,6 +49,7 @@ public class US14_manage_filters_on_Marketing_page_JZ_StepDefs {
     }
 
     @And("the user will click the filter message")
+
     public void theUserWillClickTheFilterMessage() {
         BrowserUtils.waitForPageToLoad(20);
         us14ManageFiltersOnMarketingPageJzPage.filterBtn.click();

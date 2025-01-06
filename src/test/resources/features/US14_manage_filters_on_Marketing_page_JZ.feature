@@ -18,6 +18,7 @@ Feature: Manage filters on the Marketing page
       | store manager |
 
   Scenario Outline: Verify login with different user types
+
     Given the user logged in as "<userType>"
     When the user navigate to "Marketing" and to "Campaigns" page
     And user should wait 5 seconds
