@@ -9,8 +9,8 @@ import java.util.List;
 
 public class US05_VehicleModelPage extends BasePage{
 
-    public US05_VehicleModelPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+   public US05_VehicleModelPage(){
+       PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(xpath = "//a[@class='grid-header-cell__link']")

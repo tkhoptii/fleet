@@ -17,7 +17,7 @@ public class US12_FilterCustomersInfo_StepDefinitions {
     @When("the user navigate to {string} and to {string} page")
     public void the_user_navigate_to_and_to_page(String tab, String module) {
 
-        us12FilterCustomersInfoPage.navigateToModule("Customers","Accounts");
+        us12FilterCustomersInfoPage.navigateToModule(tab, module);
 
 
     }
