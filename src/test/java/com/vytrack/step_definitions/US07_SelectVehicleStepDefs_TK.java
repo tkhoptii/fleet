@@ -16,7 +16,7 @@ public class US07_SelectVehicleStepDefs_TK {
 
     @When("user navigate to {string} and to {string} page")
     public void user_navigate_to_and_to_page(String tab, String module) {
-        us07SelectVehiclePage.navigateToModule("Fleet", "Vehicles");
+        us07SelectVehiclePage.navigateToModule(tab, module);
     }
 
     @Then("user can see all checkboxes as unchecked")
